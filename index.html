@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=apple-touch-icon sizes=57x57 href=//thebackoffice.github.io/favicon/apple-icon-57x57.png><link rel=apple-touch-icon sizes=60x60 href=//thebackoffice.github.io//favicon/apple-icon-60x60.png><link rel=apple-touch-icon sizes=72x72 href=//thebackoffice.github.io//favicon/apple-icon-72x72.png><link rel=apple-touch-icon sizes=76x76 href=//thebackoffice.github.io//favicon/apple-icon-76x76.png><link rel=apple-touch-icon sizes=114x114 href=//thebackoffice.github.io//favicon/apple-icon-114x114.png><link rel=apple-touch-icon sizes=120x120 href=//thebackoffice.github.io//favicon/apple-icon-120x120.png><link rel=apple-touch-icon sizes=144x144 href=//thebackoffice.github.io//favicon/apple-icon-144x144.png><link rel=apple-touch-icon sizes=152x152 href=//thebackoffice.github.io//favicon/apple-icon-152x152.png><link rel=apple-touch-icon sizes=180x180 href=//thebackoffice.github.io//favicon/apple-icon-180x180.png><link rel=icon type=image/png sizes=192x192 href=//thebackoffice.github.io//favicon/android-icon-192x192.png><link rel=icon type=image/png sizes=32x32 href=//thebackoffice.github.io//favicon/favicon-32x32.png><link rel=icon type=image/png sizes=96x96 href=//thebackoffice.github.io//favicon/favicon-96x96.png><link rel=icon type=image/png sizes=16x16 href=//thebackoffice.github.io//favicon/favicon-16x16.png><link rel=manifest href=//thebackoffice.github.io//favicon/manifest.json><link href="//fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet type=text/css><link href="//fonts.googleapis.com/css?family=Racing+Sans+One" rel=stylesheet type=text/css><script>var VueApp;
+
+      var TRAFFICJAM_DOMAIN = 'IO6854940';
+      var STRIPE_COMPANY = '';
+      var STRIPE_LOGO = '/Stripe-128x128.png';</script><script src=//cdn.trafficjam.io/v1.js><!-- Fixed by deploy.sh --></script><script src=//checkout.stripe.com/checkout.js></script><title>TrafficJam</title><style>body, html {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            background-image: url('/bg.png');
+        }
+
+        body {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+
+        body > .container {
+            border: 1px solid #dedede;
+            padding: 3em;
+            background-color: #ffffff;
+        }
+
+        #logo {
+            margin-top: 2em;
+        }
+
+        #app {
+            grid-column-start: 1;
+        }
+
+        .brand-font {
+            font-family: 'Racing Sans One';
+        }
+
+        .brand-font em, .brand-color {
+            color: #03bcf5 !important;
+        }
+
+        .wordmark {
+            font-size: 34px;
+            line-height: 72px;
+        }
+
+        .legal {
+            font-size: small;
+            color: #999999;
+        }
+
+        .divider {
+
+        }
+
+        .container {
+            width: auto !important;
+        }
+
+        span.line {
+            display: inline-block;
+        }
+
+        button {
+            color: rgb(255, 255, 255) !important;
+            font-size: 26px !important;
+
+            border-radius: 10px !important;
+            width: 100% !important;
+        }
+
+        button, button:hover, button:focus {
+            background-color: #03bcf5 !important;
+        }
+
+        /*button{
+            background-color: aqua
+        }
+        button:visited{
+            background-color: yellow
+        }
+        button:hover {
+            background-color: skyblue
+        }
+        button:active{
+            background-color: pink;
+        }*/
+
+        .btn-caption {
+            text-align: center;
+            background-color: #dedede;
+            border-radius: 10px;
+        }
+        .btn-caption > button{
+            text-transform: uppercase;
+        }
+
+        .btn-caption > span {
+            color: #03bcf5;
+            font-style: italic;
+            font-size: 0.7em;
+            line-height: 5px;
+            font-weight: bold;
+
+            text-transform: lowercase;
+        }
+
+        .card-title {
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .card-image {
+            margin-top: 2em;
+        }
+
+        h1 {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            font-size: 3.8rem !important;
+        }
+
+        ul, ol {
+            color: #666666;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 1.4em;
+        }
+
+        em {
+            font-size: larger;
+            line-height: 1em;
+        }
+
+        ul li i {
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            top: 3px;
+            text-align: center;
+            margin-right: 5px;
+            float: left;
+            border: 1px solid #03bcf5;
+            border-radius: 50%;
+            font-weight: bolder;
+            color: #ee5aee;
+        }
+
+        ol {
+            max-width: 350px;
+            counter-reset: my-awesome-counter;
+            list-style: none;
+            padding-left: 40px;
+        }
+
+        ol li {
+
+            counter-increment: my-awesome-counter;
+            position: relative;
+        }
+
+        ol li::before {
+            content: counter(my-awesome-counter);
+            text-align: center;
+            color: #ee5aee;
+            font-size: 1.5rem;
+            font-weight: lighter;
+            position: absolute;
+            --size: 30px;
+            left: calc(-1 * var(--size) - 10px);
+            line-height: var(--size);
+            width: var(--size);
+            height: var(--size);
+            top: 0;
+            /*transform: rotate(-10deg);*/
+            border-radius: 50%;
+            border: 1px solid #03bcf5;
+        }
+
+        .card .card-image .card-title {
+            padding: 0px 24px 0px 24px !important;
+        }
+
+        .no-buffer {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .nprogress-container {
+            /*position: absolute;*/
+        }
+
+        #nprogress .bar {
+            /* LIGHT GREEN #A6D46C */
+            /* DARK GREEN #408F4D */
+            /*border-left-color: #408F4D !important;*/
+            background: #ee5aee !important;
+        }
+
+        #nprogress .peg {
+            box-shadow: 0 0 10px #03bcf5, 0 0 5px #03bcf5 !important;
+        }
+
+        #nprogress .spinner-icon {
+            border-top-color: #03bcf5 !important;
+            border-left-color: #03bcf5 !important;
+        }
+
+        .vue-dialog-button, .vue-dialog-button:hover {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }</style><link href=/css/chunk-55d89026.e2b69108.css rel=prefetch><link href=/js/chunk-55d89026.c5899e2c.js rel=prefetch><link href=/css/chunk-vendors.6a132922.css rel=preload as=style><link href=/js/app.babea0d9.js rel=preload as=script><link href=/js/chunk-vendors.d946b078.js rel=preload as=script><link href=/css/chunk-vendors.6a132922.css rel=stylesheet></head><body><noscript><strong>We're sorry but BRAND doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div class="container nprogress-container"><div class=row><div id=logo class="col s12 center"><img src=/logo.png align=top alt="BRAND.com logo"><span class="brand-font brand-color wordmark">BRAND.com</span></div></div><div id=app></div><div class=row><div class="col s12 center legal">&copy;<script>document.write(new Date().getFullYear())</script>&nbsp;BRAND.com<br>Powered by <a href=https://trafficjam.io target=_blank>TrafficJam.io</a></div></div></div><script src=/js/chunk-vendors.d946b078.js></script><script src=/js/app.babea0d9.js></script></body></html>
